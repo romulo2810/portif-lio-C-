@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres para UTF-8, que é o mais comum e suporta acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Garante que a página seja responsiva em dispositivos móveis -->
+    <title>@ViewData["Title"] - Meu Site</title> <!-- Exibe o título da página, passando o valor de "Title" -->
+    <link rel="stylesheet" href="~/css/site.css"> <!-- Inclui o arquivo de estilos principal (site.css) -->
+    <link rel="stylesheet" href="~/css/menu.css"> <!-- Inclui o arquivo de estilos específico para o menu -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:700|Roboto&display=swap" rel="stylesheet"> <!-- Carrega fontes do Google Fonts -->
+</head>
+<body>
+    <div class="menu-wrap"> <!-- Início do menu de navegação -->
+        <input type="checkbox" class="toggler"> <!-- Caixa de seleção para abrir ou fechar o menu -->
+        <div class="hamburger"> <!-- Ícone do menu (geralmente usado como 'hambúrguer') -->
+            <div></div> <!-- Linhas do ícone do menu -->
+        </div>
+        <div class="menu"> <!-- Menu de navegação que será exibido -->
+            <div>
+                <div>
+                    <ul> <!-- Lista dos itens do menu -->
+                        <li><a asp-controller="Home" asp-action="Index">Início</a></li> <!-- Link para a página principal -->
+                        <li><a asp-controller="Home" asp-action="Projetos">Projetos</a></li> <!-- Link para a página de projetos -->
+                        <li><a asp-controller="Home" asp-action="Sobre">Sobre mim</a></li> <!-- Link para a página sobre o autor -->
+                        <li><a asp-controller="Home" asp-action="Contato">Contato</a></li> <!-- Link para a página de contato -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container"> <!-- Container principal onde o conteúdo da página será renderizado -->
+        @RenderBody() <!-- Aqui será inserido o conteúdo da página que foi chamado no controlador -->
+    </div>
+</body>
+</html>
