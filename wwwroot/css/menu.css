@@ -1,0 +1,142 @@
+.menu-wrap {
+    position: fixed;  /* Faz o menu ficar fixo no topo da página */
+    top: 0;  /* Define a posição do menu no topo da tela */
+    left: 0;  /* Define a posição do menu no lado esquerdo da tela */
+    z-index: 2;  /* Coloca o menu acima de outros elementos com z-index menor */
+}
+
+.toggler {
+    position: absolute;  /* Posiciona a caixa de seleção no menu */
+    top: 0.5rem;  /* Distância do topo */
+    left: 0.5rem;  /* Distância da esquerda */
+    width: 60px;  /* Largura do botão */
+    height: 60px;  /* Altura do botão */
+    z-index: 3;  /* Coloca o botão acima do menu */
+    opacity: 0;  /* Torna a caixa de seleção invisível */
+    cursor: pointer;  /* Muda o cursor para o estilo de clique */
+}
+
+.hamburger {
+    position: absolute;  /* Posiciona o ícone do hambúrguer dentro do botão */
+    top: 0.5rem;  /* Distância do topo */
+    left: 0.5rem;  /* Distância da esquerda */
+    width: 60px;  /* Largura do ícone */
+    height: 60px;  /* Altura do ícone */
+    z-index: 2;  /* Coloca o ícone abaixo da caixa de seleção */
+    display: flex;  /* Usa flexbox para centralizar os itens */
+    align-items: center;  /* Alinha os itens verticalmente */
+    justify-content: center;  /* Alinha os itens horizontalmente */
+    border-radius: 50%;  /* Faz o ícone ter forma circular */
+    background: #111;  /* Cor de fundo do ícone */
+}
+
+.hamburger > div {
+    position: absolute;  /* Posiciona as linhas dentro do ícone */
+    width: 60%;  /* Largura das linhas */
+    height: 3px;  /* Altura das linhas */
+    border-radius: 1.5px;  /* Arredonda as bordas das linhas */
+    background-color: #fff44f;  /* Cor das linhas */
+    transition: 0.4s;  /* Adiciona uma transição suave para as mudanças */
+}
+
+.hamburger > div:before {
+    content: '';  /* Cria uma linha antes do conteúdo */
+    position: absolute;  /* Posiciona a linha antes do conteúdo */
+    width: 100%;  /* Define a largura da linha */
+    height: 3px;  /* Define a altura da linha */
+    border-radius: 1.5px;  /* Arredonda as bordas */
+    background-color: #fff44f;  /* Cor da linha */
+    top: -10px;  /* Distância do topo */
+    left: 0;  /* Alinha à esquerda */
+    transition: 0.4s;  /* Transição suave para quando mudar */
+}
+
+.hamburger > div:after {
+    content: '';  /* Cria uma linha depois do conteúdo */
+    position: absolute;  /* Posiciona a linha após o conteúdo */
+    width: 100%;  /* Largura da linha */
+    height: 3px;  /* Altura da linha */
+    border-radius: 1.5px;  /* Bordas arredondadas */
+    background-color: #fff44f;  /* Cor da linha */
+    top: 10px;  /* Distância do topo */
+    left: 0;  /* Alinha à esquerda */
+    transition: 0.4s;  /* Transição suave para quando mudar */
+}
+
+.toggler:checked + .hamburger > div {
+    transform: rotate(135deg);  /* Roda as linhas do ícone quando o menu for aberto */
+}
+
+.toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);  /* Roda as linhas em 225 graus ao passar o mouse */
+}
+
+.toggler:checked + .hamburger > div:before, 
+.toggler:checked + .hamburger > div:after {
+    top: 0;  /* Ajusta as linhas para ficarem no centro */
+    transform: rotate(90deg);  /* Roda as linhas para ficarem horizontais */
+}
+
+.menu {
+    position: fixed;  /* Faz o menu ocupar a tela inteira */
+    top: 0;  /* Fixa o menu no topo da tela */
+    left: 0;  /* Fixa o menu na esquerda */
+    width: 100%;  /* Largura de 100% da tela */
+    height: 100%;  /* Altura de 100% da tela */
+    visibility: hidden;  /* Deixa o menu invisível por padrão */
+    transition: 0.6s;  /* Transição suave para mostrar o menu */
+}
+
+.menu > div {
+    position: absolute;  /* Posiciona a área de fundo do menu */
+    top: 50%;  /* Coloca no centro vertical */
+    left: 50%;  /* Coloca no centro horizontal */
+    transform: translateX(-150%) translateY(-50%);  /* Inicialmente, move o menu para fora da tela */
+    width: 1600px;  /* Largura da área de fundo do menu */
+    height: 1600px;  /* Altura da área de fundo do menu */
+    border-radius: 50%;  /* Torna o fundo do menu circular */
+    background-color: rgba(0, 0, 0, 0.9);  /* Cor de fundo preta com transparência */
+    display: flex;  /* Usa flexbox para organizar os itens dentro */
+    justify-content: center;  /* Alinha os itens no centro horizontal */
+    align-items: center;  /* Alinha os itens no centro vertical */
+    text-align: center;  /* Alinha o texto no centro */
+    transition: 0.6s;  /* Transição suave para quando o menu for exibido */
+}
+
+.menu > div > div {
+    max-width: 90vw;  /* Limita a largura máxima */
+    max-height: 100vh;  /* Limita a altura máxima */
+    opacity: 0;  /* Torna o conteúdo invisível por padrão */
+    transition: 0.6s;  /* Transição suave para quando o conteúdo aparecer */
+}
+
+.menu > div > div > ul > li {
+    list-style: none;  /* Remove os marcadores de lista */
+}
+
+.menu > div > div > ul > li > a {
+    text-decoration: none;  /* Remove o sublinhado do link */
+    color: #fff;  /* Define a cor do texto do link */
+    font-weight: 550;  /* Define o peso da fonte */
+    text-transform: uppercase;  /* Transforma o texto para maiúsculas */
+    margin: 0.5rem;  /* Espaçamento entre os itens do menu */
+    transition: 0.3s;  /* Transição suave ao passar o mouse */
+    font-size: 1.2rem;  /* Tamanho da fonte */
+    display: inline-block;  /* Faz os links se comportarem como blocos em linha */
+}
+
+.menu > div > div > ul > li > a:hover {
+    color: #fff44f;  /* Muda a cor do link quando o mouse passa por cima */
+}
+
+.toggler:checked ~ .menu {
+    visibility: visible;  /* Torna o menu visível quando o checkbox for marcado */
+}
+
+.toggler:checked ~ .menu > div {
+    transform: translateX(-50%) translateY(-50%);  /* Centraliza o fundo do menu quando aberto */
+}
+
+.toggler:checked ~ .menu > div > div {
+    opacity: 1;  /* Torna o conteúdo do menu visível quando o checkbox for marcado */
+}

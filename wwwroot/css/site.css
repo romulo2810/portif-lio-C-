@@ -1,0 +1,63 @@
+* {
+  padding: 0;  /* Remove qualquer espaço interno (padding) dos elementos */
+  margin: 0;  /* Remove qualquer margem dos elementos */
+  box-sizing: border-box;  /* Inclui a borda e o padding dentro das dimensões do elemento */
+}
+
+body {
+  font-family: 'Raleway', sans-serif;  /* Define a fonte padrão da página */
+  overflow: hidden;  /* Impede o conteúdo de transbordar da tela */
+}
+
+.container {
+  background: url("../css/img/wallpaper_1366x768_book-1.jpg") no-repeat;  /* Define uma imagem de fundo */
+  position: relative;  /* Permite posicionar elementos dentro com precisão */
+  height: 100vh;  /* Define a altura do container como 100% da altura da tela */
+  width: 100vw;  /* Define a largura do container como 100% da largura da tela */
+  background-size: cover;  /* Faz com que a imagem de fundo cubra toda a área do container */
+  background-position: 50% 36%;  /* Ajusta a posição da imagem de fundo */
+  display: flex;  /* Usa flexbox para posicionamento e layout */
+  flex-direction: column;  /* Organiza os itens em uma coluna */
+  justify-content: center;  /* Alinha os itens verticalmente no centro */
+  align-items: center;  /* Alinha os itens horizontalmente no centro */
+  text-align: center;  /* Alinha o texto ao centro */
+}
+
+.content {
+  position: relative;  /* Permite o posicionamento de outros elementos dentro dele */
+  max-width: 700px;  /* Define uma largura máxima para o conteúdo */
+  padding: 2rem;  /* Adiciona espaçamento interno */
+  z-index: 1;  /* Garante que o conteúdo seja exibido sobre outros elementos */
+}
+
+.content h2 {
+  color: rgba(237, 241, 0, 0.836);  /* Define a cor do título com uma transparência */
+  font-family: "Dancing Script", 'Cursive';  /* Define uma fonte cursiva para o título */
+  font-size: 3.5rem;  /* Define o tamanho da fonte do título */
+  margin-bottom: 0.8rem;  /* Adiciona espaço abaixo do título */
+}
+
+.content p {
+  color: rgb(255, 255, 255);  /* Define a cor do texto como branco */
+  font-size: 1.5rem;  /* Define o tamanho da fonte do parágrafo */
+  font-weight: 100;  /* Define o peso da fonte */
+}
+
+.btn {
+  padding: 0.75rem 1.25rem;  /* Adiciona espaçamento interno ao botão */
+  text-transform: uppercase;  /* Transforma o texto para maiúsculas */
+  color: white;  /* Define a cor do texto do botão como branco */
+  font-weight: 550;  /* Define o peso da fonte do botão */
+  font-size: 1.1rem;  /* Define o tamanho da fonte do botão */
+  font-family: 'Raleway', sans-serif;  /* Define a fonte do botão */
+  text-decoration: none;  /* Remove o sublinhado do link */
+  background-color: #b3b3b3;  /* Define a cor de fundo do botão */
+  display: inline-block;  /* Faz o botão se comportar como um bloco em linha */
+  margin-top: 0.8rem;  /* Adiciona espaço acima do botão */
+  cursor: pointer;  /* Muda o cursor para um ponteiro ao passar por cima */
+  transition: 0.3s;  /* Define uma transição suave quando o botão for alterado */
+}
+
+.btn:hover {
+  opacity: 0.6;  /* Aplica um efeito de transparência quando o botão é sobrevoado */
+}
